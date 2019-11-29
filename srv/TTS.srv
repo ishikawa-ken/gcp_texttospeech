@@ -1,0 +1,4 @@
+#service definition
+string sentence   #'text' to speech
+---
+bool success
