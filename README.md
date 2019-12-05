@@ -32,7 +32,7 @@ tts_pub = rospy.ServiceProxy('/tts', TTS)
 
 
 
-## 説明
+## その他
 ---
 
 発話部分を直接呼び出さず関数化することをおすすめします
