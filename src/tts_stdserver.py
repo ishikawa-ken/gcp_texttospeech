@@ -16,7 +16,7 @@ Filename = 'output.wav'
 class TTS_server(object):
     def __init__(self):
         rospy.init_node('gcp_texttospeech')
-        self.srv = rospy.Service('service_call', TTS, self.execute)
+        self.srv = rospy.Service('/tts', TTS, self.execute)
         rospy.loginfo("Ready to gcp_texttospeech stdserver")
         rospy.spin()
 

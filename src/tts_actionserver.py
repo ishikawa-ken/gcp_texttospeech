@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#-*- coding: utf-8 -*-
+#[tts_actionserver.py]
 
 import roslib
 import rospy
@@ -21,10 +23,9 @@ class TTS(object):
                                                 execute_cb=self.execute,\
                                                 auto_start=False)
         self._as.start()
-        rospy.loginfo("Ready to gcp_texttospeech server")
+        rospy.loginfo("Ready to gcp_texttospeech actionserver")
 
     def execute(self, goal):
-        print('A')
         client = texttospeech.TextToSpeechClient()
         synthesis_input = texttospeech.types.SynthesisInput(text=goal.text)
         voice = texttospeech.types.VoiceSelectionParams(
@@ -42,7 +43,6 @@ class TTS(object):
             print('Audio content written to file ' + Filename)
 
         self.PlayWaveFile()
-        print('A')
 
     def PlayWaveFile(self):
         try:
