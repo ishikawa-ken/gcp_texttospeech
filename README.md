@@ -1,10 +1,8 @@
 # gcp_texttospeech
----
 
 **仮想環境に入ること**
 
 ## **アクションサーバ**
----
 
 ```
 $ rosrun gcp_texttospeech tts_actionserver.py
@@ -12,31 +10,31 @@ $ rosrun gcp_texttospeech tts_actionserver.py
 
 使い方
 
-```[python:actionserver]
+```python
 tts_pub = actionlib.SimpleActionClient('gcp_texttospeech', gcp_texttospeech.msg.TTSAction)
 ```
 
 
 ## **サービス通信**
----
 
 ```
-$ rosrun gcp_texttospeech tts_stdserver.py
+$ rosrun gcp_texttospeech tts_srvserver.py
 ```
 
 使い方
 
-```[python:stdserver]
+```python
 tts_pub = rospy.ServiceProxy('/tts', TTS)
 ```
 
 
 
 ## その他
----
 
 発話部分を直接呼び出さず関数化することをおすすめします
-```[python:srvの例]
+
+例：
+```python
 from gcp_texttospeech.srv import *
 
 class hogehoge(object):   #クラス名をTTSにしないこと
