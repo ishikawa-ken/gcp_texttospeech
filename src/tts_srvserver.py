@@ -4,7 +4,7 @@
 
 import roslib
 import rospy
-from gcp_texttospeech.srv import TTS
+from gcp_texttospeech.srv import TTS, TTSResponse
 
 from google.cloud import texttospeech
 
@@ -38,6 +38,7 @@ class TTS_server(object):
             print('Audio content written to file ' + Filename)
 
         self.PlayWaveFile()
+        return TTSResponse()
 
     def PlayWaveFile(self):
         try:
@@ -61,6 +62,7 @@ class TTS_server(object):
         stream.stop_stream()
         stream.close()
         p.terminate()
+        return
 
 
 if __name__ == '__main__':
