@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="gcp_texttospeech" name="gcp_texttospeech" type="tts_srvserver.py" output="screen" />
+</launch>
